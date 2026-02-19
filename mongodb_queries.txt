@@ -1,0 +1,85 @@
+# MongoDB Student Database - Lab 11 Queries
+# Sadaya Preston - Advanced Database IT 4153
+
+# ============================================
+# DATABASE SETUP
+# ============================================
+
+# Switch to StudentDB database
+use StudentDB
+
+# Switch to Sprest11 database
+use Sprest11
+
+# ============================================
+# BASIC QUERIES
+# ============================================
+
+# Find all students in the database
+db.students.find()
+
+# Find all students with pretty formatting
+db.students.find().pretty()
+
+# Find one student document
+db.students.findOne()
+
+# ============================================
+# FILTERING QUERIES
+# ============================================
+
+# Find a specific student by name
+db.students.find({ name: "Wilburn Spiess" }).pretty()
+
+# Find students with specific score criteria
+# (Add your specific filtering queries here based on your lab requirements)
+
+# ============================================
+# QUERIES ON STUDENT SCORES
+# ============================================
+
+# Each student has scores array with:
+# - exam scores
+# - quiz scores  
+# - homework scores
+
+# Example of the data structure:
+# {
+#   _id: 5,
+#   name: 'Wilburn Spiess',
+#   scores: [
+#     { score: 44.87186330181261, type: 'exam' },
+#     { score: 25.72395114668016, type: 'quiz' },
+#     { score: 63.42288310628662, type: 'homework' }
+#   ]
+# }
+
+# Find students and display their scores
+db.students.find({}, { name: 1, scores: 1 }).pretty()
+
+# ============================================
+# AGGREGATION QUERIES
+# ============================================
+
+# Count total students
+db.students.count()
+
+# Find students sorted by name
+db.students.find().sort({ name: 1 })
+
+# ============================================
+# ADVANCED QUERIES USED IN LAB
+# ============================================
+
+# Query to filter students by exam scores
+# Query to find students with quiz scores above a threshold
+# Query to calculate average homework scores
+# (Add specific queries from your lab assignment)
+
+# ============================================
+# NOTES
+# ============================================
+# - This database contains student academic performance data
+# - Each student has multiple score types (exam, quiz, homework)
+# - Scores are stored in an array of subdocuments
+# - MongoDB shell commands were executed in Homebrew MongoDB installation
