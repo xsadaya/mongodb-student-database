@@ -1,5 +1,7 @@
 # MongoDB Student Database System
 
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+
 **Course:** Advanced Database IT 4153  
 **Student:** Sadaya Preston  
 **Project:** Lab 11 - MongoDB Student Database Management
@@ -28,7 +30,7 @@ NoSQL database system designed for managing student records and academic perform
 ### StudentDB Collection
 The database contains student documents with the following structure:
 
-json
+```json
 {
   "_id": 5,
   "name": "Student Name",
@@ -38,7 +40,7 @@ json
     { "score": 63.42, "type": "homework" }
   ]
 }
-
+```
 
 ### Key Features:
 - Each student has a unique `_id`
@@ -55,29 +57,33 @@ json
 ### Installation Steps
 
 1. **Install MongoDB using Homebrew:**
-     bash
+   ```bash
    brew install mongodb-community@7.0
+   ```
    
 
 2. **Start MongoDB service:**
-     bash
+   ```bash
    brew services start mongodb/brew/mongodb-community@7.0
+   ```
    
 
 3. **Connect to MongoDB:**
-     bash
+   ```bash
    mongosh
+   ```
    
 
 4. **Switch to StudentDB:**
-     javascript
+   ```javascript
    use StudentDB
+   ```
    
 
 ## Key Queries Implemented
 
 ### Basic Operations
-  javascript
+```javascript
 // View all students
 db.students.find()
 
@@ -94,17 +100,17 @@ db.students.findOne()
 db.students.find({ name: "Wilburn Spiess" }).pretty()
 
 // Find students with specific criteria
-// (See queries/mongodb_queries.txt for complete list)
+// (See mongodb_queries.txt for complete list)
 ```
 
 ### Data Analysis
-  javascript
+```javascript
 // Count total students
 db.students.count()
 
 // Sort students by name
 db.students.find().sort({ name: 1 })
-
+```
 
 ## Screenshots
 
@@ -115,7 +121,7 @@ Screenshots show:
 4. Data filtering and analysis
 5. Query results with `.pretty()` formatting
 
-## See `/screenshots` folder for detailed visual documentation.
+See [screenshots](screenshots/) for visual documentation and [query examples](mongodb_queries.txt) for the source.
 
 ## What I Learned:
 
